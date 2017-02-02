@@ -2,6 +2,7 @@
 
 tmux() {
     ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
+    tmux source-file $HOME/.tmux.conf
 }
 
 vim() {
