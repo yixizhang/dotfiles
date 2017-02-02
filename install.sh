@@ -11,7 +11,12 @@ vim() {
     ln -sf $(pwd)/.vimrc $HOME/.vim_runtime/my_configs.vim
 }
 
+shell() {
+    cat .bashrc >> $HOME/.bashrc
+}
+
 ## main
 tmux
 vim
+shell
 
