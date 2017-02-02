@@ -12,7 +12,7 @@ vim() {
 }
 
 shell() {
-    cat .bashrc >> $HOME/.bashrc
+    echo "source ~/dotfiles/.bashrc" >> $HOME/.bashrc
 }
 
 ## main
