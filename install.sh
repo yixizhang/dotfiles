@@ -1,8 +1,12 @@
 #! /bin/bash
 
+set -e
+
+cwd=$(pwd)
+
 install_tmux() {
     echo "install tmux"
-    ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
+    ln -sf "$cwd"/.tmux.conf $HOME/.tmux.conf
     tmux source-file $HOME/.tmux.conf
 }
 
@@ -15,7 +19,8 @@ install_vim() {
         git clone https://github.com/amix/vimrc.git ~/.vim_runtime
         sh ~/.vim_runtime/install_awesome_vimrc.sh
     fi
-    ln -sf $(pwd)/.vimrc $HOME/.vim_runtime/my_configs.vim
+    ln -sf "$cwd"/.vimrc $HOME/.vim_runtime/my_configs.vim
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
 install_shell() {

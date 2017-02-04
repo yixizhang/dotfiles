@@ -9,6 +9,7 @@ I hope this configs can one day turn into `nix` packages or something more deter
 ## Install
 
  ```
+ tmux
  git clone https://github.com/yixizhang/dotfiles.git ~/.dotfiles
  cd ~/.dotfiles && sh ./install.sh
  ```

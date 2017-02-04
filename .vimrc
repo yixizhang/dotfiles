@@ -16,8 +16,8 @@ filetype plugin indent on
 
 " plugins
 call plug#begin('~/.vim/plugged')
-" Asynchronous Lint Engine
-Plug 'w0rp/ale'
+" Asynchronous Lint Engine, requires NeoVim 1.5+ or Vim 8
+" Plug 'w0rp/ale'
 " autocompletion
 Plug 'davidhalter/jedi-vim'
 " supertab
