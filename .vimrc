@@ -33,6 +33,6 @@ Plug 'davidhalter/jedi-vim'
 " supertab
 Plug 'ervandew/supertab'
 " python-mode
-Plug 'python-mode/python-mode'
+" Plug 'python-mode/python-mode'
 call plug#end()
 
