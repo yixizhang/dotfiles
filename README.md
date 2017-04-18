@@ -1,5 +1,3 @@
-![dotfiles](http://jleajones.com/assets/images/dotfiles.png)
-
 ## What
 
 **Configs are code**
