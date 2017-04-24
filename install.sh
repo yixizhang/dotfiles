@@ -25,7 +25,7 @@ install_vim() {
 
 install_shell() {
     echo "install shell"
-    echo "source $HOME/dotfiles/.bashrc" >> $HOME/.bashrc
+    echo "source $cwd/.bashrc" >> $HOME/.bashrc
     source $HOME/.bashrc
 }
 

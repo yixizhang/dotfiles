@@ -8,7 +8,7 @@ I hope this configs can one day turn into `nix` packages or something more deter
 
  ```
  tmux
- git clone https://github.com/yixizhang/dotfiles.git ~/.dotfiles
- cd ~/.dotfiles && sh ./install.sh
+ git clone https://github.com/yixizhang/configs.git ~/.configs
+ cd ~/.configs && sh ./install.sh
  ```
 
