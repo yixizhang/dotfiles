@@ -10,6 +10,8 @@ install_nix() {
     else
         echo "Install Nix"
         curl https://nixos.org/nix/install | sh
+        echo ". $HOME/.nix-profile/etc/profile.d/nix.sh" >> $HOME/.bashrc
+        source $HOME/.bashrc
     fi
 }
 
