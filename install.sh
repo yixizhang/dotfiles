@@ -16,9 +16,17 @@ install_nix() {
 }
 
 install_tmux() {
-    echo "Setup tmux"
-    ln -sf "$cwd"/.tmux.conf $HOME/.tmux.conf
-    tmux source-file $HOME/.tmux.conf
+    if hash tmux 2>/dev/null; then
+        echo "Setup tmux"
+        ln -sf "$cwd"/.tmux.conf $HOME/.tmux.conf
+        if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
+            echo "TMUX is not running, stop here."
+        else
+            tmux source-file $HOME/.tmux.conf
+        fi
+    else
+        echo "TMUX is not available, stop here."
+    fi
 }
 
 install_vim() {
