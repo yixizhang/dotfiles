@@ -40,7 +40,11 @@ install_shell() {
 }
 
 ## main
-install_nix
+if [[ $(id -u) -ne 0 ]]; then
+    install_nix
+else
+    echo "Nix cannot be installed as root user"
+fi
 install_tmux
 install_vim
 install_shell
