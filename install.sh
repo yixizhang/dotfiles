@@ -8,6 +8,10 @@ install_nix() {
     if hash nix-env 2>/dev/null; then
         echo "Nix is available"
     else
+        if [[ $(id -u) -eq 0 ]]; then
+            mkdir -p /etc/nix
+            echo "build-users-group =" > /etc/nix/nix.conf
+        fi
         echo "Install Nix"
         curl https://nixos.org/nix/install | sh
         echo ". $HOME/.nix-profile/etc/profile.d/nix.sh" >> $HOME/.bashrc
@@ -48,11 +52,7 @@ install_shell() {
 }
 
 ## main
-if [[ $(id -u) -ne 0 ]]; then
-    install_nix
-else
-    echo "Nix cannot be installed as root user"
-fi
+install_nix
 install_tmux
 install_vim
 install_shell
