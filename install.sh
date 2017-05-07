@@ -43,6 +43,8 @@ install_vim() {
     fi
     ln -sf "$cwd"/.vimrc $HOME/.vim_runtime/my_configs.vim
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    # install preset plugins via vim-plug
+    vim "PlugInstall|q|q"
 }
 
 install_shell() {
