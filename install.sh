@@ -4,6 +4,12 @@ set -e
 
 cwd=$(pwd)
 
+install_pacapt() {
+    sudo wget -O /usr/local/bin/pacapt https://github.com/icy/pacapt/raw/ng/pacapt
+    sudo chmod 755 /usr/local/bin/pacapt
+    sudo ln -sv /usr/local/bin/pacapt /usr/local/bin/pacman || true
+}
+
 install_nix() {
     if hash nix-env 2>/dev/null; then
         echo "Nix is available"
@@ -18,18 +24,22 @@ install_nix() {
     fi
 }
 
-install_tmux() {
-    if hash tmux 2>/dev/null; then
-        echo "Setup tmux"
-        ln -sf "$cwd"/.tmux.conf $HOME/.tmux.conf
-        if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
-            echo "TMUX is not running, stop here."
-        else
-            tmux source-file $HOME/.tmux.conf
-        fi
+setup_tmux() {
+    echo "Setup tmux"
+    ln -sf "$cwd"/.tmux.conf $HOME/.tmux.conf
+    if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
+        echo "TMUX is not running, stop here."
     else
-        echo "TMUX is not available, stop here."
+        tmux source-file $HOME/.tmux.conf
     fi
+}
+
+install_tmux() {
+    if ! hash tmux 2>/dev/null; then
+        echo "TMUX is not available, install it now."
+        pacman -S tmux
+    fi
+    setup_tmux
 }
 
 install_vim() {
@@ -52,6 +62,7 @@ install_shell() {
 }
 
 ## main
+install_pacapt
 install_nix
 install_tmux
 install_vim
