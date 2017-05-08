@@ -49,7 +49,6 @@ install_vim() {
 install_shell() {
     echo "Setup shell"
     echo "source $cwd/.bashrc" >> $HOME/.bashrc
-    source $HOME/.bashrc
 }
 
 ## main

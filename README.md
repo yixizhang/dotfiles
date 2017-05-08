@@ -9,5 +9,6 @@ I hope this configs can one day turn into `nix` packages or something more deter
 
  ```bash
  git clone https://github.com/yixizhang/configs.git ~/.configs
- cd ~/.configs && bash -i ./install.sh
+ cd ~/.configs && ./install.sh
+ source ~/.bashrc
  ```
