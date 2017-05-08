@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 set -e
 
@@ -15,7 +15,6 @@ install_nix() {
         echo "Install Nix"
         curl https://nixos.org/nix/install | sh
         echo ". $HOME/.nix-profile/etc/profile.d/nix.sh" >> $HOME/.bashrc
-        source $HOME/.bashrc
     fi
 }
 
@@ -44,7 +43,7 @@ install_vim() {
     ln -sf "$cwd"/.vimrc $HOME/.vim_runtime/my_configs.vim
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     # install preset plugins via vim-plug
-    vim "PlugInstall|q|q"
+    vim -c "PlugInstall|q|q"
 }
 
 install_shell() {
