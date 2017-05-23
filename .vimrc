@@ -32,7 +32,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'davidhalter/jedi-vim'
 " supertab
 Plug 'ervandew/supertab'
+" yaml
+Plug 'pearofducks/ansible-vim'
 " python-mode
 " Plug 'python-mode/python-mode'
 call plug#end()
-
