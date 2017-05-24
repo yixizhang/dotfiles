@@ -23,6 +23,11 @@ let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
 " syntax
 filetype plugin indent on
+autocmd Filetype html setlocal ts=2 sw=2
+autocmd FileType javascript setlocal ts=2 sw=2
+autocmd FileType yaml setlocal ts=2 sw=2
+autocmd FileType python setlocal ts=2 sw=2
+autocmd BufNewFile,BufRead *.json set ft=javascript
 
 " plugins
 call plug#begin('~/.vim/plugged')
@@ -34,6 +39,8 @@ Plug 'davidhalter/jedi-vim'
 Plug 'ervandew/supertab'
 " yaml
 Plug 'pearofducks/ansible-vim'
+" whitespace
+Plug 'itspriddle/vim-stripper'
 " python-mode
 " Plug 'python-mode/python-mode'
 call plug#end()
