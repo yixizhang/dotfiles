@@ -41,6 +41,13 @@ Plug 'ervandew/supertab'
 Plug 'pearofducks/ansible-vim'
 " whitespace
 Plug 'itspriddle/vim-stripper'
-" python-mode
-" Plug 'python-mode/python-mode'
+" pep8
+Plug 'tell-k/vim-autopep8'
 call plug#end()
+
+
+" pep8 config
+let g:autopep8_aggressive=1
+let g:autopep8_disable_show_diff=1
+let g:autopep8_diff_type='horizontal'
+autocmd BufWritePre <buffer> call Autopep8()
