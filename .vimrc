@@ -56,5 +56,5 @@ call plug#end()
 " autocmd BufWritePre *.py call Autopep8()
 
 set termguicolors     " enable true colors support
-let ayucolor="light"  " for light version of theme
+let ayucolor="dark"  " for light version of theme
 colorscheme ayu
