@@ -43,9 +43,15 @@ Plug 'pearofducks/ansible-vim'
 Plug 'itspriddle/vim-stripper'
 " pep8
 Plug 'tell-k/vim-autopep8'
+" theme
+Plug 'ayu-theme/ayu-vim' " or other package manager
 call plug#end()
 
 " pep8 config
 " let g:autopep8_disable_show_diff=1
 " let g:autopep8_diff_type='horizontal'
 " autocmd BufWritePre *.py call Autopep8()
+
+set termguicolors     " enable true colors support
+let ayucolor="light"  " for light version of theme
+colorscheme ayu
