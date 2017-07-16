@@ -21,6 +21,9 @@ set foldlevel=99
 let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
+" basics
+set number
+
 " syntax
 filetype plugin indent on
 autocmd Filetype html setlocal ts=2 sw=2
