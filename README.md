@@ -8,7 +8,7 @@ I hope this configs can one day turn into `nix` packages or something more deter
 ### Install
 
  ```bash
- git clone https://github.com/yixizhang/configs.git ~/.configs
- cd ~/.configs && ./install.sh
+ git clone https://github.com/yixizhang/dotfiles.git ~/.dotfiles
+ cd ~/.dotfiles && ./install.sh
  source ~/.bashrc
  ```
