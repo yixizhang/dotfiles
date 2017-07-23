@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo add-apt-repository ppa:jonathonf/vim
+sudo add-apt-repository ppa:pi-rho/dev
 
 sudo apt update
 
