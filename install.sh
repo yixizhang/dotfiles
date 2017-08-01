@@ -7,7 +7,11 @@ cwd=$(pwd)
 install_pacapt() {
     sudo wget -O /usr/local/bin/pacapt https://github.com/icy/pacapt/raw/ng/pacapt
     sudo chmod 755 /usr/local/bin/pacapt
-    sudo ln -sv /usr/local/bin/pacapt /usr/local/bin/pacman || true
+    if hash /usr/local/bin/pacapt 2>/dev/null; then
+        echo "pacman is available, skip ln"
+    else
+        sudo ln -sv /usr/local/bin/pacapt /usr/local/bin/pacman || true
+    fi
 }
 
 install_nix() {
@@ -20,17 +24,17 @@ install_nix() {
         fi
         echo "Install Nix"
         curl https://nixos.org/nix/install | sh
-        echo ". $HOME/.nix-profile/etc/profile.d/nix.sh" >> $HOME/.bashrc
+        echo ". $HOME/.nix-profile/etc/profile.d/nix.sh" >> "$HOME"/.bashrc
     fi
 }
 
 setup_tmux() {
     echo "Setup tmux"
-    ln -sf "$cwd"/.tmux.conf $HOME/.tmux.conf
+    ln -sf "$cwd"/.tmux.conf "$HOME"/.tmux.conf
     if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
         echo "TMUX is not running, stop here."
     else
-        tmux source-file $HOME/.tmux.conf
+        tmux source-file "$HOME"/.tmux.conf
     fi
 }
 
@@ -50,7 +54,7 @@ install_vim() {
         git clone https://github.com/amix/vimrc.git ~/.vim_runtime
         sh ~/.vim_runtime/install_awesome_vimrc.sh
     fi
-    ln -sf "$cwd"/.vimrc $HOME/.vim_runtime/my_configs.vim
+    ln -sf "$cwd"/.vimrc "$HOME"/.vim_runtime/my_configs.vim
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     # install preset plugins via vim-plug
     vim -c "PlugInstall|q|q"
@@ -58,7 +62,7 @@ install_vim() {
 
 install_shell() {
     echo "Setup shell"
-    echo "source $cwd/.bashrc" >> $HOME/.bashrc
+    echo "source $cwd/.bashrc" >> "$HOME"/.bashrc
 }
 
 ## main
