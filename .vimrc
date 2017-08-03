@@ -32,6 +32,9 @@ autocmd FileType yaml setlocal ts=2 sw=2
 autocmd FileType python setlocal ts=4 sw=4
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
+" mitigate ale/syntastic conflict warning
+let g:ale_emit_conflict_warnings = 0
+
 " plugins
 call plug#begin('~/.vim/plugged')
 
@@ -47,5 +50,19 @@ Plug 'pearofducks/ansible-vim'
 Plug 'itspriddle/vim-stripper'
 " pep8
 Plug 'tell-k/vim-autopep8'
+" lint
+Plug 'vim-syntastic/syntastic'
 
 call plug#end()
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_checkers = ['pylint']
