@@ -29,4 +29,5 @@ disable=W0142,W0403,R0201,W0212,
         W0613,W0232,R0903,C0301,
         R0913,C0103,R0914,C0330,
         C0103,C0111,
-        singleton-comparison,fixme
+        singleton-comparison,fixme,
+        logging-format-interpolation
