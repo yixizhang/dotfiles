@@ -38,9 +38,6 @@ let g:ale_emit_conflict_warnings = 0
 " plugins
 call plug#begin('~/.vim/plugged')
 
-" Asynchronous Lint Engine, requires NeoVim 1.5+ or Vim 8
-" Plug 'w0rp/ale'
-" autocompletion
 Plug 'davidhalter/jedi-vim'
 " supertab
 Plug 'ervandew/supertab'
@@ -48,8 +45,6 @@ Plug 'ervandew/supertab'
 Plug 'pearofducks/ansible-vim'
 " whitespace
 Plug 'itspriddle/vim-stripper'
-" pep8
-Plug 'tell-k/vim-autopep8'
 " lint
 Plug 'vim-syntastic/syntastic'
 
