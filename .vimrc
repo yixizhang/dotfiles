@@ -47,6 +47,10 @@ Plug 'pearofducks/ansible-vim'
 Plug 'itspriddle/vim-stripper'
 " lint
 Plug 'vim-syntastic/syntastic'
+" command-t
+Plug 'wincent/command-t', {
+\   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
+\ }
 
 call plug#end()
 
@@ -62,3 +66,6 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = "--rcfile=$HOME/dotfiles/.pylintrc"
+
+" command-t
+let g:CommandTFileScanner = "git"
