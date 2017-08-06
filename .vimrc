@@ -69,3 +69,5 @@ let g:syntastic_python_pylint_args = "--rcfile=$HOME/dotfiles/.pylintrc"
 
 " command-t
 let g:CommandTFileScanner = "git"
+nnoremap <Leader>e :CommandT<CR>
+nnoremap <Leader>b :CommandTBuffer<CR>
