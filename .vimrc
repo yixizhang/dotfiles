@@ -4,6 +4,16 @@ set ttyfast
 " Enable mouse use in all modes
 set mouse=a
 
+" Highlight current line
+set cursorline
+
+" Redraw only when we need to.
+set lazyredraw
+
+" Search
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+
 " Set this to the name of your terminal that supports mouse codes.
 " Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
 set ttymouse=xterm2
