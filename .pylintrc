@@ -39,7 +39,8 @@ disable=W0142,W0403,R0201,W0212,
         deprecated-method,wrong-import-position,bare-except,broad-except,
         useless-super-delegation,global-statement,arguments-differ,pointless-string-statement,
         ungrouped-imports,multiple-statements,exec-used,too-many-ancestors,too-many-return-statements,
-        anomalous-backslash-in-string,too-many-lines,assignment-from-no-return
+        anomalous-backslash-in-string,too-many-lines,assignment-from-no-return,unbalanced-tuple-unpacking,
+        lost-exception
 
 [REPORTS]
 
