@@ -48,8 +48,9 @@ install_tmux() {
 
 install_vim() {
     echo "Setup vim"
-    if ! hash vim 2>/dev/null; then
-        echo "VIM is not available, install vim-nox (version 8.0) now."
+    local has_ruby_support=$(vim --version | grep -c "+ruby")
+    if ! hash vim 2>/dev/null || [ $has_ruby_support -eq 0 ]; then
+        echo "Install vim-nox (version 8.0) now."
         sudo add-apt-repository ppa:pi-rho/dev
         sudo apt update
         sudo apt-get install vim-nox
