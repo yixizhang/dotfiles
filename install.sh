@@ -72,8 +72,8 @@ install_shell() {
 }
 
 ## main
-install_pacapt
-install_nix
+#install_pacapt
+#install_nix
 install_tmux
 install_vim
 install_shell
