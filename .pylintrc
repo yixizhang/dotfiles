@@ -53,8 +53,6 @@ output-format=colorized
 
 # List of classes names for which member attributes should not be checked
 # # (useful for classes with attributes dynamicaly set).
-ignored-classes=EntMutator,EntQuery,ActorEntQuery,ActorEntMutator,sstore.sstorelib
 
 # List of members which are set dynamically and missed by pylint inference
 # # system, and so shouldn't trigger E0201 when accessed.
-generated-members=TestCase,zulu,tomlin

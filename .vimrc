@@ -75,7 +75,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_pylint_args = "--rcfile=$HOME/dotfiles/.pylintrc"
+let g:syntastic_python_pylint_args = "--rcfile=$HOME/.pylintrc"
 
 " command-t
 let g:CommandTFileScanner = "git"
