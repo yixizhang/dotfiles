@@ -49,14 +49,14 @@ let g:ale_emit_conflict_warnings = 0
 call plug#begin('~/.vim/plugged')
 
 Plug 'davidhalter/jedi-vim'
-" supertab
+"" supertab
 Plug 'ervandew/supertab'
-" yaml
+"" yaml
 Plug 'pearofducks/ansible-vim'
-" whitespace
+"" whitespace
 Plug 'itspriddle/vim-stripper'
 " lint
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 " command-t
 Plug 'wincent/command-t', {
 \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
@@ -64,18 +64,11 @@ Plug 'wincent/command-t', {
 
 call plug#end()
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_pylint_args = "--rcfile=$HOME/.pylintrc"
+" Lint
+let g:ale_completion_enabled = 1
+let g:ale_python_pylint_executable = "python3"
+let g:ale_python_pylint_options = "--rcfile=$HOME/.pylintrc"
+let g:ale_python_pylint_use_global = 0
 
 " command-t
 let g:CommandTFileScanner = "git"
