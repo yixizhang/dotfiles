@@ -65,10 +65,11 @@ Plug 'wincent/command-t', {
 call plug#end()
 
 " Lint
+let g:ale_linters = {
+  \ 'python': ['pylint'] ,
+  \ }
 let g:ale_completion_enabled = 1
-let g:ale_python_pylint_executable = "python3"
-let g:ale_python_pylint_options = "--rcfile=$HOME/.pylintrc"
-let g:ale_python_pylint_use_global = 0
+let g:ale_python_pylint_options = '--rcfile $HOME/.pylintrc'
 
 " command-t
 let g:CommandTFileScanner = "git"
