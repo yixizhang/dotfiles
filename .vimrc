@@ -48,12 +48,15 @@ let g:ale_emit_conflict_warnings = 0
 " plugins
 call plug#begin('~/.vim/plugged')
 
+Plug 'flazz/vim-colorschemes'
+Plug 'HenryNewcomer/vim-theme-mutenight_scene'
+" jedi
 Plug 'davidhalter/jedi-vim'
-"" supertab
+" supertab
 Plug 'ervandew/supertab'
-"" yaml
+" yaml
 Plug 'pearofducks/ansible-vim'
-"" whitespace
+" whitespace
 Plug 'itspriddle/vim-stripper'
 " lint
 Plug 'w0rp/ale'
@@ -79,3 +82,6 @@ let g:ale_python_pylint_options = '--rcfile $HOME/.pylintrc'
 let g:CommandTFileScanner = "git"
 nnoremap <Leader>e :CommandT<CR>
 nnoremap <Leader>b :CommandTBuffer<CR>
+
+" color
+colorscheme coda
