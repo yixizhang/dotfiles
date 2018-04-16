@@ -67,6 +67,11 @@ Plug 'wincent/command-t', {
 
 call plug#end()
 
+" jedi config
+" Jedi automatically starts the completion,
+" if you type a dot, e.g. str., if you don't want this:
+let g:jedi#popup_on_dot = 0
+
 " Lint
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
