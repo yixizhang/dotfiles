@@ -84,4 +84,4 @@ nnoremap <Leader>e :CommandT<CR>
 nnoremap <Leader>b :CommandTBuffer<CR>
 
 " color
-colorscheme coda
+colorscheme Monokai
