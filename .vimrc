@@ -52,6 +52,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'HenryNewcomer/vim-theme-mutenight_scene'
 " jedi
 Plug 'davidhalter/jedi-vim'
+Plug 'maralla/completor.vim'
 " supertab
 Plug 'ervandew/supertab'
 " yaml
@@ -71,6 +72,7 @@ call plug#end()
 " Jedi automatically starts the completion,
 " if you type a dot, e.g. str., if you don't want this:
 let g:jedi#popup_on_dot = 0
+let g:completor_python_binary = '/usr/bin/python3'
 
 " Lint
 let g:ale_set_loclist = 0
