@@ -84,6 +84,8 @@ let g:ale_linters = {
   \ }
 let g:ale_completion_enabled = 1
 let g:ale_python_pylint_options = '--rcfile $HOME/.pylintrc'
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " command-t
 let g:CommandTFileScanner = "git"
