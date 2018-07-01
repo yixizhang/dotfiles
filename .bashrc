@@ -4,10 +4,13 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 bind 'set completion-ignore-case on'
 
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+function _update_ps1() {
+    PS1=$(powerline-shell $?)
 }
-export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+
+if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
 
 alias gb="git branch"
 alias gbd="git branch -D"
