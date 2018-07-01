@@ -4,13 +4,8 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 bind 'set completion-ignore-case on'
 
-function _update_ps1() {
-    PS1=$(powerline-shell $?)
-}
-
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
+GIT_PROMPT_ONLY_IN_REPO=1
+source ~/.bash-git-prompt/gitprompt.sh
 
 alias gb="git branch"
 alias gbd="git branch -D"
