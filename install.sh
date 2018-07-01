@@ -72,9 +72,15 @@ install_shell() {
     echo "source $cwd/.bashrc" >> "$HOME"/.bashrc
 }
 
+install_configs() {
+    echo "Setup configs"
+    cp -r "$cwd/.config" "$HOME/"
+}
+
 ## main
 #install_pacapt
 #install_nix
 install_tmux
 install_vim
 install_shell
+install_configs
