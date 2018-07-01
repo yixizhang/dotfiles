@@ -1,0 +1,18 @@
+{
+  "segments": [
+    "time",
+    "ssh",
+    "cwd",
+    "git",
+    "git_stash",
+    "jobs",
+    "set_term_title",
+    "newline",
+    "root"
+  ],
+  "mode": "compatible",
+  "cwd": {
+    "mode": "plain",
+    "max_depth": 3
+  }
+}
