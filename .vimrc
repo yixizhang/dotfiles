@@ -94,3 +94,9 @@ nnoremap <Leader>b :CommandTBuffer<CR>
 
 " color
 colorscheme Monokai
+
+" buffer
+" Move to the next buffer
+nmap <leader>h :bnext<CR>
+" Move to the previous buffer
+nmap <leader>f :bprevious<CR>
