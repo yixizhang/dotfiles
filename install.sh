@@ -83,4 +83,4 @@ install_configs() {
 install_tmux
 install_vim
 install_shell
-install_configs
+#install_configs
