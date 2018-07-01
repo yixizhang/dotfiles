@@ -53,6 +53,9 @@ Plug 'HenryNewcomer/vim-theme-mutenight_scene'
 " jedi
 Plug 'davidhalter/jedi-vim'
 Plug 'maralla/completor.vim'
+" airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " supertab
 Plug 'ervandew/supertab'
 " yaml
@@ -67,6 +70,8 @@ Plug 'wincent/command-t', {
 \ }
 
 call plug#end()
+
+let mapleader = ","
 
 " jedi config
 " Jedi automatically starts the completion,
@@ -95,8 +100,18 @@ nnoremap <Leader>b :CommandTBuffer<CR>
 " color
 colorscheme Monokai
 
+" airline
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+" theme
+" let g:airline_theme='simple'
+
 " buffer
 " Move to the next buffer
 nmap <leader>h :bnext<CR>
 " Move to the previous buffer
 nmap <leader>f :bprevious<CR>
+" kill buffer
+nmap <leader>k :bd<CR>
