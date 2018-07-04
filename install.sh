@@ -55,7 +55,14 @@ install_vim() {
         sudo apt update
         sudo apt-get install vim-nox
     fi
-    ln -sf "$cwd"/.vimrc "$HOME"/.vimrc
+    rm -rf ~/.vim_runtime
+    git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+    ln -sf "$cwd"/.vimrc ~/.vim_runtime/my_configs.vim
+    echo 'set runtimepath+=~/.vim_runtime
+
+    source ~/.vim_runtime/vimrcs/basic.vim
+    source ~/.vim_runtime/vimrcs/filetypes.vim
+    source ~/.vim_runtime/my_configs.vim' > ~/.vimrc
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     # install preset plugins via vim-plug
     vim -c "PlugInstall|q|q"
