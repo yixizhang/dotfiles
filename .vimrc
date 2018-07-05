@@ -71,8 +71,6 @@ Plug 'wincent/command-t', {
 
 call plug#end()
 
-let mapleader = ","
-
 " jedi config
 " Jedi automatically starts the completion,
 " if you type a dot, e.g. str., if you don't want this:
