@@ -109,8 +109,8 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " buffer
 " Move to the next buffer
-nmap <leader>h :bnext<CR>
+nmap <leader>l :bnext<CR>
 " Move to the previous buffer
-nmap <leader>f :bprevious<CR>
+nmap <leader>h :bprevious<CR>
 " kill buffer
 nmap <leader>k :bd<CR>
