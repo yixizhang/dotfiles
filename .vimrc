@@ -64,6 +64,8 @@ Plug 'pearofducks/ansible-vim'
 Plug 'itspriddle/vim-stripper'
 " lint
 Plug 'w0rp/ale'
+" ack
+Plug 'mileszs/ack.vim'
 " command-t
 Plug 'wincent/command-t', {
 \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
@@ -114,3 +116,16 @@ nmap <leader>l :bnext<CR>
 nmap <leader>h :bprevious<CR>
 " kill buffer
 nmap <leader>k :bd<CR>
+
+" Ack/Ag
+" note that Ag (https://github.com/ggreer/the_silver_searcher)
+" requires installation in your system
+" on Ubuntu `apt-get install silversearcher-ag`
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+" Prevent search result from leaking
+" to terminal
+" https://github.com/mileszs/ack.vim/issues/18
+set shellpipe=>
+nmap <leader>w :Ack!<Space>
