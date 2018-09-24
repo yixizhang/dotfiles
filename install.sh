@@ -78,6 +78,11 @@ install_configs() {
     cp -r "$cwd/.config" "$HOME/"
 }
 
+install_gitconfig() {
+    echo "Setup gitconfig"
+    ln -sf "$cwd"/.gitconfig ~/.gitconfig
+}
+
 ## main
 #install_pacapt
 #install_nix
@@ -85,3 +90,4 @@ install_tmux
 install_vim
 install_shell
 #install_configs
+install_gitconfig
