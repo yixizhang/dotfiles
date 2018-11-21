@@ -9,13 +9,14 @@ source ~/.bash-git-prompt/gitprompt.sh
 
 alias gb="git branch"
 alias gbd="git branch -D"
-alias gs="git status"
 alias gc="git checkout"
-alias gd="git diff"
-alias gl="git log"
 alias gcl="git clean -fd . && git checkout -- ."
+alias gd="git diff"
 alias gg="git grep -IPn --color"
+alias gl="git log"
+alias gp="git pull && git fetch --prune"
 alias gr="grep -rIPn --color"
+alias gs="git status"
 alias co="git commit"
 alias cat=bat
 alias preview="fzf --preview 'bat --color \"always\" {}'"
