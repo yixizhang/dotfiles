@@ -117,10 +117,6 @@ nmap <leader>h :bprevious<CR>
 " kill buffer
 nmap <leader>k :bd<CR>
 
-" comment
-vnoremap <silent> # :s/^/#/<cr>:noh<cr>
-vnoremap <silent> -# :s/^#//<cr>:noh<cr>
-
 " Ack/Ag
 " note that Ag (https://github.com/ggreer/the_silver_searcher)
 " requires installation in your system
