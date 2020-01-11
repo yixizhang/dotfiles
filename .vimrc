@@ -24,6 +24,9 @@ autocmd FileType python nnoremap <LocalLeader>i :!isort %<CR><CR>
 autocmd FileType javascript set formatprg=prettier\ --stdin
 autocmd BufWritePre *.js :normal gggqG
 
+" netrw
+let g:netrw_banner = 0
+
 " unfold by default
 set foldlevel=99
 
